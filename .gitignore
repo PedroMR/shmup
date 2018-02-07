@@ -1,0 +1,44 @@
+Dist
+obj/
+
+# =============== #
+# Unity generated #
+# =============== #
+Shmup/Temp/
+Shmup/Obj/
+Shmup/obj/
+Shmup/UnityGenerated/
+Shmup/Library/
+ 
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ ExportedObj/
+ *.svd
+ *.userprefs
+ *.userprefs.meta
+ Shmup/*.csproj
+ *.csproj.test-cache
+ *.pidb
+ *.suo
+ Shmup/*.sln
+ *.user
+ *.unityproj
+ *.booproj
+  
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.*.sw?
+
+
+Library
+Temp
+
