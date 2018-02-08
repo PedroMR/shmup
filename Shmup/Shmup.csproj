@@ -322,7 +322,9 @@
     <Compile Include="Assets\_Complete-Game\Scripts\Done_PlayerController.cs" />
     <Compile Include="Assets\_Complete-Game\Scripts\Done_RandomRotator.cs" />
     <Compile Include="Assets\_Complete-Game\Scripts\Done_WeaponController.cs" />
+    <Compile Include="Assets\Shmup\Scripts\LevelData.cs" />
     <Compile Include="Assets\Shmup\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Shmup\Scripts\ShmupCamera.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
   </ItemGroup>
   <ItemGroup>

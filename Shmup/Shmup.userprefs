@@ -1,10 +1,15 @@
 ﻿<Properties StartupConfiguration="{879DB7DC-3B6A-1E0B-518B-D0FD6642957C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Complete-Game/Scripts/Done_PlayerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Shmup Status">
     <Files>
       <File FileName="Assets/_Complete-Game/Scripts/Done_GameController.cs" Line="16" Column="1" />
       <File FileName="Assets/_Complete-Game/Scripts/Done_PlayerController.cs" Line="25" Column="4" />
       <File FileName="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets/Shmup/Scripts/PlayerController.cs" Line="7" Column="15" />
+      <File FileName="Assets/Shmup/Scripts/PlayerController.cs" Line="12" Column="2" />
+      <File FileName="Assets/Standard Assets/Utility/FollowTarget.cs" Line="1" Column="1" />
+      <File FileName="Assets/Standard Assets/Utility/SmoothFollow.cs" Line="44" Column="78" />
+      <File FileName="Assets/Shmup/Scripts/ShmupCamera.cs" Line="31" Column="13" />
+      <File FileName="Assets/Shmup/Scripts/LevelData.cs" Line="32" Column="23" />
+      <File FileName="Shmup Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

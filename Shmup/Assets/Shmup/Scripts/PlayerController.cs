@@ -9,8 +9,10 @@ namespace com.pedromr.games.shmup
 		public float xMin, xMax, zMin, zMax;
 	}
 
+	
 	public class PlayerController : MonoBehaviour
 	{
+		public float forwardSpeed;
 		public float speed;
 		public float tilt;
 		public Boundary boundary;
@@ -20,6 +22,13 @@ namespace com.pedromr.games.shmup
 		public float fireRate;
 
 		private float nextFire;
+
+		private Rigidbody rb;
+
+		void Start()
+		{
+			this.rb = GetComponent<Rigidbody>();
+		}
 
 		void Update()
 		{
@@ -31,22 +40,38 @@ namespace com.pedromr.games.shmup
 			}
 		}
 
+		private void OnCollisionEnter(Collision collision)
+		{
+			if (collision.gameObject.CompareTag("Obstacles"))
+				Destroy(this.gameObject);
+		}
+
+		private void OnTriggerEnter(Collider other)
+		{
+			if (other.gameObject.CompareTag("Obstacles"))
+				Destroy(this.gameObject);
+
+		}
+
 		void FixedUpdate()
 		{
 			float moveHorizontal = Input.GetAxis("Horizontal");
 			float moveVertical = Input.GetAxis("Vertical");
 
 			Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-			GetComponent<Rigidbody>().velocity = movement * speed;
+			rb.velocity = movement * speed;
 
-			GetComponent<Rigidbody>().position = new Vector3
+			rb.position = new Vector3
 			(
-				Mathf.Clamp(GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
+				Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
 				0.0f,
-				Mathf.Clamp(GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
+					rb.position.z
+				//Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
 			);
 
-			GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+			rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
+
+			rb.velocity = movement * speed + forwardSpeed * Vector3.forward;
 		}
 	}
 }
