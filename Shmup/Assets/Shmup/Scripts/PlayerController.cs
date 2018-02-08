@@ -15,7 +15,8 @@ namespace com.pedromr.games.shmup
 		public float forwardSpeed;
 		public float speed;
 		public float tilt;
-		public Boundary boundary;
+		//public Boundary boundary;
+		public PathCenter pathCenter;
 
 		public GameObject shot;
 		public Transform shotSpawn;
@@ -59,19 +60,18 @@ namespace com.pedromr.games.shmup
 			float moveVertical = Input.GetAxis("Vertical");
 
 			Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-			rb.velocity = movement * speed;
+			var velocity = movement * speed * Time.deltaTime;
+			transform.localPosition += velocity;
+			//rb.velocity = velocity;
 
-			rb.position = new Vector3
+			transform.localPosition = new Vector3
 			(
-				Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
-				0.0f,
-					rb.position.z
-				//Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
+					Mathf.Clamp(transform.localPosition.x, pathCenter.shipBounds.xMin, pathCenter.shipBounds.xMax),
+					0.0f,
+					Mathf.Clamp(transform.localPosition.z, pathCenter.shipBounds.zMin, pathCenter.shipBounds.zMax)
 			);
 
-			rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
-
-			rb.velocity = movement * speed + forwardSpeed * Vector3.forward;
+			transform.rotation = Quaternion.Euler(0.0f, 0.0f, movement.x * -tilt);
 		}
 	}
 }
