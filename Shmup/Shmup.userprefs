@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{879DB7DC-3B6A-1E0B-518B-D0FD6642957C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shmup/Scripts/LevelData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Shmup Status">
     <Files>
-      <File FileName="Assets/_Complete-Game/Scripts/Done_GameController.cs" Line="16" Column="1" />
+      <File FileName="Assets/_Complete-Game/Scripts/Done_GameController.cs" Line="50" Column="5" />
       <File FileName="Assets/_Complete-Game/Scripts/Done_PlayerController.cs" Line="25" Column="4" />
       <File FileName="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" Line="1" Column="1" />
       <File FileName="Assets/Shmup/Scripts/PlayerController.cs" Line="74" Column="62" />
@@ -10,6 +10,11 @@
       <File FileName="Assets/Shmup/Scripts/ShmupCamera.cs" Line="31" Column="13" />
       <File FileName="Assets/Shmup/Scripts/LevelData.cs" Line="26" Column="52" />
       <File FileName="Assets/Shmup/Scripts/PathCenter.cs" Line="20" Column="4" />
+      <File FileName="Assets/_Complete-Game/Scripts/Done_EvasiveManeuver.cs" Line="17" Column="10" />
+      <File FileName="Assets/Shmup/Scripts/EnemySpawn.cs" Line="43" Column="66" />
+      <File FileName="Assets/_Complete-Game/Scripts/Done_DestroyByContact.cs" Line="37" Column="1" />
+      <File FileName="Assets/_Complete-Game/Scripts/Done_Mover.cs" Line="13" Column="1" />
+      <File FileName="Shmup Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
