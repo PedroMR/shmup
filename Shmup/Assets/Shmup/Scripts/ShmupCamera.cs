@@ -12,8 +12,8 @@ namespace com.pedromr.games.shmup
 		//[SerializeField]
 		//private float distance = 10.0f;
 		// the height we want the camera to be above the target
-		[SerializeField]
-		private float height = 10.0f;
+		//[SerializeField]
+		//private float height = 10.0f;
 
 		[SerializeField]
 		private float positionDamping;

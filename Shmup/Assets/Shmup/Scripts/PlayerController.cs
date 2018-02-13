@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 namespace com.pedromr.games.shmup
 {
@@ -22,13 +23,13 @@ namespace com.pedromr.games.shmup
 		public Transform shotSpawn;
 		public float fireRate;
 
-		private float nextFire;
+		[SerializeField]
+		private GameObject removalEffect;
 
-		private Rigidbody rb;
+		private float nextFire;
 
 		void Start()
 		{
-			this.rb = GetComponent<Rigidbody>();
 		}
 
 		void Update()
@@ -44,13 +45,23 @@ namespace com.pedromr.games.shmup
 		private void OnCollisionEnter(Collision collision)
 		{
 			if (collision.gameObject.CompareTag("Obstacles"))
-				Destroy(this.gameObject);
+			{
+				Die();
+			}
+		}
+
+		public void Die()
+		{
+			if (removalEffect != null) {
+				Instantiate(removalEffect, transform.position, transform.rotation);
+			}
+			Destroy(this.gameObject);
 		}
 
 		private void OnTriggerEnter(Collider other)
 		{
 			if (other.gameObject.CompareTag("Obstacles"))
-				Destroy(this.gameObject);
+				Die();
 
 		}
 

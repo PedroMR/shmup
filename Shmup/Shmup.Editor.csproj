@@ -310,6 +310,10 @@
       <Project>{20E8D224-BDA3-0BAB-F00E-48345139754F}</Project>
       <Name>Shmup.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="Shmup.Plugins.unityproj">
+      <Project>{20E8D224-BDA3-0BAB-F00E-48345139754F}</Project>
+      <Name>Shmup.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="Shmup.csproj">
       <Project>{879DB7DC-3B6A-1E0B-518B-D0FD6642957C}</Project>
       <Name>Shmup</Name>
@@ -359,6 +363,7 @@
     <Compile Include="Assets\Cinemachine\PostFX\Editor\CinemachinePostProcessingEditor.cs" />
     <Compile Include="Assets\Cinemachine\PostFX\Editor\PostFXAutoImport.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\Editor\CinemachineShotEditor.cs" />
+    <Compile Include="Assets\Shmup\Scripts\Editor\MenuUtilities.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
   </ItemGroup>
   <ItemGroup>
