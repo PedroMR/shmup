@@ -1,21 +1,16 @@
 ﻿<Properties StartupConfiguration="{879DB7DC-3B6A-1E0B-518B-D0FD6642957C}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Shmup Status">
     <Files>
-      <File FileName="Assets/_Complete-Game/Scripts/Done_GameController.cs" Line="50" Column="5" />
-      <File FileName="Assets/_Complete-Game/Scripts/Done_PlayerController.cs" Line="25" Column="4" />
-      <File FileName="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" Line="1" Column="1" />
-      <File FileName="Assets/Shmup/Scripts/PlayerController.cs" Line="53" Column="9" />
-      <File FileName="Assets/Standard Assets/Utility/FollowTarget.cs" Line="1" Column="1" />
-      <File FileName="Assets/Standard Assets/Utility/SmoothFollow.cs" Line="44" Column="78" />
-      <File FileName="Assets/Shmup/Scripts/ShmupCamera.cs" Line="18" Column="19" />
-      <File FileName="Assets/Shmup/Scripts/LevelData.cs" Line="26" Column="52" />
-      <File FileName="Assets/Shmup/Scripts/PathCenter.cs" Line="20" Column="4" />
-      <File FileName="Assets/_Complete-Game/Scripts/Done_EvasiveManeuver.cs" Line="17" Column="10" />
-      <File FileName="Assets/Shmup/Scripts/EnemySpawn.cs" Line="4" Column="34" />
-      <File FileName="Assets/_Complete-Game/Scripts/Done_Mover.cs" Line="13" Column="1" />
-      <File FileName="Assets/Shmup/Scripts/Editor/MenuUtilities.cs" Line="13" Column="70" />
       <File FileName="Assets/Shmup/Scripts/GameManager.cs" Line="19" Column="3" />
-      <File FileName="Assets/Shmup/Scripts/NewMonoBehaviour.cs" Line="18" Column="1" />
+      <File FileName="Assets/Shmup/Scripts/EnemyBehaviours/IEnemyBehaviour.cs" Line="8" Column="30" />
+      <File FileName="Assets/Demigiant/DOTween/Examples/Basics.cs" Line="1" Column="1" />
+      <File FileName="Assets/Shmup/Scripts/TestTweenPath.cs" Line="10" Column="28" />
+      <File FileName="Assets/Shmup/Scripts/EnemySpawn.cs" Line="38" Column="1" />
+      <File FileName="Assets/Shmup/Scripts/EnemyBehaviours/EnemyParameters.cs" Line="23" Column="6" />
+      <File FileName="Assets/Shmup/Scripts/DestroyByContactWithPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Shmup/Scripts/GOUtils.cs" Line="10" Column="1" />
+      <File FileName="Assets/Shmup/Scripts/LevelData.cs" Line="10" Column="35" />
+      <File FileName="Assets/_Complete-Game/Scripts/Done_Mover.cs" Line="13" Column="1" />
       <File FileName="Shmup Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>

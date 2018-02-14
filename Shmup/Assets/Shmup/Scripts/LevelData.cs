@@ -7,6 +7,7 @@ namespace com.pedromr.games.shmup
 	{
 		public GameObject playerSpawn;
 		public PathCenter pathCenter;
+		public GameObject enemyContainer;
 
 		public void OnDrawGizmos()
 		{
