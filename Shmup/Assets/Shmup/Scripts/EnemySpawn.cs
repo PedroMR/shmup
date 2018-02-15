@@ -17,24 +17,30 @@ namespace com.pedromr.games.shmup
 
 		public void OnDrawGizmos()
 		{
-			Gizmos.color = Color.yellow;
-			if (!DrawEditorMeshForObject())
-			{
-				Gizmos.DrawWireSphere(transform.position, 1);
-			}
-			DrawEnemyParams(enemyParams);
+			var position = transform.position;
+			var rotation = transform.rotation;
+			DrawGizmosForSpawn(position, rotation);
 		}
 
-		private void DrawEnemyParams(EnemyParameters enemyParams)
+		public void DrawGizmosForSpawn(Vector3 position, Quaternion rotation)
+		{
+			Gizmos.color = Color.yellow;
+			if (!DrawEditorMeshForObject()) {
+				Gizmos.DrawWireSphere(position, 1);
+			}
+			DrawEnemyParams(enemyParams, position, rotation);
+		}
+
+		private void DrawEnemyParams(EnemyParameters enemyParams, Vector3 position, Quaternion rotation)
 		{
 			if (enemyParams == null) return;
 
 			if (enemyParams.waypoints != null) {
-				var lastPoint = transform.position;
+				var lastPoint = position;
 
 				foreach (var waypoint in enemyParams.waypoints) {
 					var localPoint = flipOnX ? new Vector3(-waypoint.x, waypoint.y, waypoint.z) : waypoint;
-					var thisPoint = transform.TransformPoint(localPoint);
+					var thisPoint =  transform.TransformPoint(localPoint);
 
 					Gizmos.DrawWireSphere(thisPoint, 0.5f);
 					Gizmos.DrawLine(lastPoint, thisPoint);
@@ -66,22 +72,28 @@ namespace com.pedromr.games.shmup
 		private void OnTriggerEnter(Collider other)
 		{
 			if(!spawned && other.gameObject.CompareTag("GameController")) {
-				Debug.Log("Instantiating enemy");
-				var container = new GameObject(this.name + " Inst");
-				var levelData = gameObject.GetComponentInParent<LevelData>();
-				var enemyContainer = levelData.enemyContainer;
-
-				container.transform.parent = enemyContainer.transform;
-				container.transform.SetPositionAndRotation(transform.position, transform.rotation);
-				var newEnemy = Instantiate(enemyType,transform.position, transform.rotation, container.transform);
-				//newEnemy.transform.parent = container.transform;
-				if (enemyParams != null) 
-				{
-					enemyParams.Initialize(newEnemy, this);
-				}
-				//Destroy(gameObject);
-				spawned = true;
+				Spawn();
 			}
+		}
+
+		public void Spawn()
+		{
+			if (spawned) return;
+
+			Debug.Log("Spawning enemy");
+			var container = new GameObject(this.name + " Inst");
+			var levelData = gameObject.GetComponentInParent<LevelData>();
+			var enemyContainer = levelData.enemyContainer;
+
+			container.transform.parent = enemyContainer.transform;
+			container.transform.SetPositionAndRotation(transform.position, transform.rotation);
+			var newEnemy = Instantiate(enemyType, transform.position, transform.rotation, container.transform);
+			//newEnemy.transform.parent = container.transform;
+			if (enemyParams != null) {
+				enemyParams.Initialize(newEnemy, this, container);
+			}
+			//Destroy(gameObject);
+			spawned = true;
 		}
 	}
 }

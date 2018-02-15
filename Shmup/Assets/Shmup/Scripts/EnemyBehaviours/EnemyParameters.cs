@@ -10,10 +10,12 @@ namespace com.pedromr.games.shmup
 		public float speed;
 		public Vector3[] waypoints;
 		public bool flipX;
-		public float lookAt;
+		public float lookAhead;
 		public float tiltX;
 
-		public void Initialize(GameObject newEnemy, EnemySpawn spawnObject)
+		private const int tweenPathResolution = 30;
+
+		public void Initialize(GameObject newEnemy, EnemySpawn spawnObject, GameObject container)
 		{
 			if (waypoints != null) {
 				var worldWaypoints = new Vector3[waypoints.Length];
@@ -26,10 +28,17 @@ namespace com.pedromr.games.shmup
 																		  localWaypoint.y, localWaypoint.z);
 				}
 
-				newEnemy.transform.DOLocalPath(worldWaypoints, speed, PathType.CatmullRom, PathMode.Full3D, 30)
+				var tweenCompletion = container.AddComponent<DisappearWhenTweenComplete>();
+
+				var tweenParams = new TweenParams();
+				tweenParams.SetSpeedBased(true).SetEase(Ease.Linear).SetLoops(0).SetAutoKill(true);
+				if (tweenCompletion != null) {
+					tweenParams.OnComplete(tweenCompletion.OnTweenComplete);
+				}
+
+				var tween = newEnemy.transform.DOLocalPath(worldWaypoints, speed, PathType.CatmullRom, PathMode.Full3D, tweenPathResolution)
 					 //newEnemy.transform.DOLocalPath(theWaypoints, speed, PathType.CatmullRom, PathMode.TopDown2D)
-				        .SetSpeedBased().SetEase(Ease.Linear).SetLoops(0).SetOptions(false)
-				        .SetLookAt(lookAt,-Vector3.forward)
+				                    .SetAs(tweenParams).SetOptions(false).SetLookAt(lookAhead, -Vector3.forward)
 				        ;
 
 			}
