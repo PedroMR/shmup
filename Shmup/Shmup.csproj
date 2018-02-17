@@ -400,16 +400,21 @@
     <Compile Include="Assets\Shmup\Scripts\EnemyBehaviours\DisappearWhenTweenComplete.cs" />
     <Compile Include="Assets\Shmup\Scripts\EnemyBehaviours\EnemyParameters.cs" />
     <Compile Include="Assets\Shmup\Scripts\EnemyBehaviours\IEnemyBehaviour.cs" />
+    <Compile Include="Assets\Shmup\Scripts\EnemyBehaviours\ReleaseLoot.cs" />
     <Compile Include="Assets\Shmup\Scripts\EnemyBehaviours\SquadronDefinition.cs" />
     <Compile Include="Assets\Shmup\Scripts\EnemySpawn.cs" />
     <Compile Include="Assets\Shmup\Scripts\GameManager.cs" />
     <Compile Include="Assets\Shmup\Scripts\GOUtils.cs" />
+    <Compile Include="Assets\Shmup\Scripts\GroupActivateObjects.cs" />
     <Compile Include="Assets\Shmup\Scripts\LevelData.cs" />
+    <Compile Include="Assets\Shmup\Scripts\LevelEndMarker.cs" />
     <Compile Include="Assets\Shmup\Scripts\PathCenter.cs" />
     <Compile Include="Assets\Shmup\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Shmup\Scripts\PlayerState.cs" />
     <Compile Include="Assets\Shmup\Scripts\ShmupCamera.cs" />
+    <Compile Include="Assets\Shmup\Scripts\SpawnCenter.cs" />
     <Compile Include="Assets\Shmup\Scripts\TestTweenPath.cs" />
-    <Compile Include="Assets\SpawnCenter.cs" />
+    <Compile Include="Assets\Shmup\Scripts\UI\GameHUD.cs" />
     <Compile Include="Assets\SWS\Scripts\Helper\MoveAnimator.cs" />
     <Compile Include="Assets\SWS\Scripts\Helper\PathIndicator.cs" />
     <Compile Include="Assets\SWS\Scripts\Helper\PathRenderer.cs" />
@@ -418,11 +423,6 @@
     <Compile Include="Assets\SWS\Scripts\Manager\WaypointManager.cs" />
     <Compile Include="Assets\SWS\Scripts\Movement\navMove.cs" />
     <Compile Include="Assets\SWS\Scripts\Movement\splineMove.cs" />
-    <Compile Include="Assets\Shmup\Scripts\GroupActivateObjects.cs" />
-    <Compile Include="Assets\Shmup\Scripts\LevelEndMarker.cs" />
-    <Compile Include="Assets\Shmup\Scripts\PlayerState.cs" />
-    <Compile Include="Assets\Shmup\Scripts\UI\GameHUD.cs" />
-    <Compile Include="Assets\Shmup\Scripts\EnemyBehaviours\ReleaseLoot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
