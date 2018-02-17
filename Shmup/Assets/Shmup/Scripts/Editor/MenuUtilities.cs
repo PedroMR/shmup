@@ -6,11 +6,13 @@ namespace com.pedromr.games.shmup {
 	
 	public class MenuUtilities
 	{
-		[MenuItem("PedroMR/Scenes/Game")]
-		public static void SceneGame()
+		[MenuItem("PedroMR/Scenes/Game")] public static void SceneGame() { CheckAndLoad("Game"); }
+		[MenuItem("PedroMR/Scenes/Level 1")] public static void SceneLevel1() { CheckAndLoad("Level 1"); }
+
+		public static void CheckAndLoad(string name)
 		{
 			if (UnityEditor.SceneManagement.EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-				UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Shmup/Scenes/Game.unity");
+				UnityEditor.SceneManagement.EditorSceneManager.OpenScene("Assets/Shmup/Scenes/"+name+".unity");
 		}
 	}
 

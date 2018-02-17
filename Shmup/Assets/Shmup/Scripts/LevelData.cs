@@ -1,4 +1,6 @@
 using UnityEngine;
+using DG.Tweening;
+using System;
 
 namespace com.pedromr.games.shmup
 {
@@ -46,6 +48,25 @@ namespace com.pedromr.games.shmup
 			//TODO non-straight lanes
 		}
 
+		public void Start()
+		{
+			if (Application.isPlaying) {
+				var sequence = DOTween.Sequence();
+				sequence.AppendInterval(1)
+						.AppendCallback(SpawnPlayer);
+				sequence.Play();
+			}
+		}
+
+		private void SpawnPlayer()
+		{
+			var player = GameManager.Instance.CreatePlayer();
+			player.transform.parent = playerSpawn.transform;
+			player.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+			var playerController = player.GetComponent<PlayerController>();
+			playerController.WarpInAndFly();
+		}
 	}
 
 }

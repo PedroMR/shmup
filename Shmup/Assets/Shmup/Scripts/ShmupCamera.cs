@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace com.pedromr.games.shmup
 {
@@ -43,6 +44,11 @@ namespace com.pedromr.games.shmup
 			//var vel = wantedPosition - this.transform.position;
 			transform.position = Vector3.SmoothDamp(transform.position, wantedPosition, ref velocity, positionDamping);
 			//transform.Translate(vel * Time.deltaTime);
+		}
+
+		internal void OnLevelLoaded()
+		{
+			Debug.Log("ShmupCamera:OnLevelLoaded()");
 		}
 	}
 }

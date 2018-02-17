@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using DG.Tweening;
 
 namespace com.pedromr.games.shmup
 {
@@ -30,6 +31,7 @@ namespace com.pedromr.games.shmup
 
 		void Start()
 		{
+			if (pathCenter == null) pathCenter = transform.GetComponentInParent<PathCenter>();
 		}
 
 		void Update()
@@ -65,6 +67,18 @@ namespace com.pedromr.games.shmup
 
 		}
 
+		public void Flying(bool active)
+		{
+			var groupActivate = GetComponent<GroupActivateObjects>();
+			if (groupActivate != null) groupActivate.SetAllActive(active);
+		}
+
+		public void StartFlying()
+		{
+			Flying(true);
+			pathCenter.running = true;
+		}
+
 		void FixedUpdate()
 		{
 			float moveHorizontal = Input.GetAxis("Horizontal");
@@ -83,6 +97,14 @@ namespace com.pedromr.games.shmup
 			);
 
 			transform.rotation = Quaternion.Euler(0.0f, 0.0f, movement.x * -tilt);
+		}
+
+		internal void WarpInAndFly()
+		{
+			var sequence = DOTween.Sequence();
+			var tweenIn = transform.DOScale(0.1f, 0.5f).SetEase(Ease.InCirc).From();
+
+			sequence.Append(tweenIn).AppendInterval(0.4f).AppendCallback(StartFlying).Play();
 		}
 	}
 }

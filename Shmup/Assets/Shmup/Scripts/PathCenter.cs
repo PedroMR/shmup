@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace com.pedromr.games.shmup {
 		[SerializeField]
 		private float speed;
 
+		public bool running = false;
+
 		public Boundary shipBounds;
 
 		void Start () {
@@ -15,8 +18,9 @@ namespace com.pedromr.games.shmup {
 		}
 		
 		void FixedUpdate () {
-			transform.Translate(Vector3.forward * speed * Time.deltaTime);
-			
+			if (running) {
+				transform.Translate(Vector3.forward * speed * Time.deltaTime);
+			}
 		}
 
 		public void OnDrawGizmos()
@@ -32,6 +36,11 @@ namespace com.pedromr.games.shmup {
 			Gizmos.DrawLine(leftFore, rightFore);
 			Gizmos.DrawLine(rightFore, rightBack);
 			Gizmos.DrawLine(rightBack, leftBack);
+		}
+
+		internal void OnLevelLoaded()
+		{
+			
 		}
 	}
 }
