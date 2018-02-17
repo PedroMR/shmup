@@ -420,6 +420,8 @@
     <Compile Include="Assets\SWS\Scripts\Movement\splineMove.cs" />
     <Compile Include="Assets\Shmup\Scripts\GroupActivateObjects.cs" />
     <Compile Include="Assets\Shmup\Scripts\LevelEndMarker.cs" />
+    <Compile Include="Assets\Shmup\Scripts\PlayerState.cs" />
+    <Compile Include="Assets\Shmup\Scripts\UI\GameHUD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />

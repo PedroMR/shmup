@@ -13,6 +13,10 @@ namespace com.pedromr.games.shmup
 		[SerializeField]
 		private GameObject playerPrefab;
 
+		private PlayerState playerState;
+
+		private GameHUD hud;
+
 		public static GameManager Instance
 		{
 			get
@@ -30,6 +34,15 @@ namespace com.pedromr.games.shmup
 		{
 			_instance = this;
 			DontDestroyOnLoad(gameObject);
+			hud = GetComponentInChildren<GameHUD>();
+			LoadPlayerState();
+			hud.UpdateScrap(playerState.scrap);
+		}
+
+		private void LoadPlayerState()
+		{
+			playerState = ScriptableObject.CreateInstance<PlayerState>();
+			
 		}
 
 		// Update is called once per frame

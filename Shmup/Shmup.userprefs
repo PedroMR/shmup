@@ -1,14 +1,16 @@
 ﻿<Properties StartupConfiguration="{879DB7DC-3B6A-1E0B-518B-D0FD6642957C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shmup/Scripts/NewMonoBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shmup/Scripts/GameManager.cs">
     <Files>
-      <File FileName="Assets/Shmup/Scripts/GameManager.cs" Line="13" Column="18" />
+      <File FileName="Assets/Shmup/Scripts/GameManager.cs" Line="40" Column="4" />
       <File FileName="Assets/Shmup/Scripts/ShmupCamera.cs" Line="30" Column="3" />
-      <File FileName="Assets/Shmup/Scripts/PathCenter.cs" Line="12" Column="30" />
-      <File FileName="Assets/Shmup/Scripts/LevelData.cs" Line="12" Column="36" />
+      <File FileName="Assets/Shmup/Scripts/PathCenter.cs" Line="14" Column="30" />
+      <File FileName="Assets/Shmup/Scripts/LevelData.cs" Line="77" Column="47" />
       <File FileName="Assets/Shmup/Scripts/GroupActivateObjects.cs" Line="6" Column="1" />
-      <File FileName="Assets/Shmup/Scripts/PlayerController.cs" Line="105" Column="43" />
-      <File FileName="Shmup Status" />
-      <File FileName="Assets/Shmup/Scripts/NewMonoBehaviour.cs" Line="4" Column="30" />
+      <File FileName="Assets/Shmup/Scripts/PlayerController.cs" Line="114" Column="62" />
+      <File FileName="Assets/Shmup/Scripts/LevelEndMarker.cs" Line="6" Column="15" />
+      <File FileName="Assets/Shmup/Scripts/Editor/MenuUtilities.cs" Line="11" Column="70" />
+      <File FileName="Assets/Shmup/Scripts/PlayerState.cs" Line="8" Column="10" />
+      <File FileName="Assets/Shmup/Scripts/UI/GameHUD.cs" Line="24" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
