@@ -107,18 +107,21 @@ namespace com.pedromr.games.shmup
 			}
 		}
 
+		internal void OnEndReached()
+		{
+			Debug.Log("It's over");
+			SceneManager.LoadScene("Game");
+		}
+
 		internal GameObject CreatePlayer()
 		{
 			var playerGO = Instantiate(playerPrefab);
 			return playerGO;
 		}
 
-		void StartLevel(LevelData level) {
-			if (runningLevel != null) {
-				runningLevel.gameObject.SetActive(false);
-				Destroy(runningLevel.gameObject);
-				runningLevel = null;
-			}
+		void StartLevel(LevelData level)
+		{
+			StopRunningLevel();
 			runningLevel = level;
 			runningLevel.gameObject.SetActive(true);
 
@@ -127,6 +130,16 @@ namespace com.pedromr.games.shmup
 
 			var pathCenter = level.GetComponentInChildren<PathCenter>();
 			pathCenter.OnLevelLoaded();
+		}
+
+		private void StopRunningLevel()
+		{
+			if (runningLevel != null)
+			{
+				runningLevel.gameObject.SetActive(false);
+				Destroy(runningLevel.gameObject);
+				runningLevel = null;
+			}
 		}
 	}
 }

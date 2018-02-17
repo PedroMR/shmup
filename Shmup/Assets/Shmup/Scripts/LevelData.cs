@@ -10,6 +10,7 @@ namespace com.pedromr.games.shmup
 		public GameObject playerSpawn;
 		public PathCenter pathCenter;
 		public GameObject enemyContainer;
+		private PlayerController playerController;
 
 		public void OnDrawGizmos()
 		{
@@ -64,8 +65,23 @@ namespace com.pedromr.games.shmup
 			player.transform.parent = playerSpawn.transform;
 			player.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
 
-			var playerController = player.GetComponent<PlayerController>();
+			playerController = player.GetComponent<PlayerController>();
 			playerController.WarpInAndFly();
+		}
+
+		public void OnEndReached(LevelEndMarker marker)
+		{
+			pathCenter.running = false;
+
+			var sequence = DOTween.Sequence();
+			sequence.AppendCallback(playerController.WarpOut)
+					.AppendInterval(1.5f)
+					.AppendCallback(ExitLevel);
+		}
+
+		private void ExitLevel()
+		{
+			GameManager.Instance.OnEndReached();
 		}
 	}
 

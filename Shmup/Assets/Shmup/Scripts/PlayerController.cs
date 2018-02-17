@@ -106,5 +106,17 @@ namespace com.pedromr.games.shmup
 
 			sequence.Append(tweenIn).AppendInterval(0.4f).AppendCallback(StartFlying).Play();
 		}
+
+		internal void WarpOut()
+		{
+			Flying(false);
+			transform.DOLocalMoveZ(6, 1f);
+			var tweenOut = transform.DOScale(0.1f, 0.6f).SetDelay(0.5f).SetEase(Ease.OutCirc).OnComplete(HideShip);
+		}
+
+		internal void HideShip()
+		{
+			gameObject.SetActive(false);
+		}
 	}
 }
