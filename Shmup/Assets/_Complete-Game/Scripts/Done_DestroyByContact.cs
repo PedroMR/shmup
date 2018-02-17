@@ -1,48 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace com.pedromr.games.shmup
+public class Done_DestroyByContact : MonoBehaviour
 {
-	public class DestroyByContactWithPlayer : MonoBehaviour
-	{
-		public GameObject explosion;
-		public GameObject playerExplosion;
-		public int scoreValue;
-		private Done_GameController gameController;
+	public GameObject explosion;
+	public GameObject playerExplosion;
+	public int scoreValue;
 
-		void Start()
+	void Start()
+	{
+	}
+
+	void OnTriggerEnter(Collider other)
+	{
+
+		if (other.tag == "PlayerWeapon")
 		{
-			GameObject gameControllerObject = GameObject.FindGameObjectWithTag("GameController");
-			if (gameControllerObject != null)
+			// Destroyed!
+			if (explosion != null)
 			{
-				gameController = gameControllerObject.GetComponent<Done_GameController>();
+				Instantiate(explosion, transform.position, transform.rotation);
 			}
-			if (gameController == null)
-			{
-				Debug.Log("Cannot find 'GameController' script");
-			}
+			Destroy(gameObject);
+			//gameController.AddScore(scoreValue);
 		}
 
-		void OnTriggerEnter(Collider other)
+		if (other.tag == "Player")
 		{
-
-			if (other.tag == "PlayerWeapon")
-			{
-				// Destroyed!
-				if (explosion != null)
-				{
-					Instantiate(explosion, transform.position, transform.rotation);
-				}
-				Destroy(gameObject);
-				//gameController.AddScore(scoreValue);
-			}
-
-			if (other.tag == "Player")
-			{
-				Destroy(other.gameObject);
-				Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-				//gameController.GameOver();
-			}
+			Destroy(other.gameObject);
+			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			//gameController.GameOver();
 		}
 	}
 }

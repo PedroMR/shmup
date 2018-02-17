@@ -10,8 +10,8 @@ namespace com.pedromr.games.shmup
 		private static GameManager _instance;
 		private LevelData runningLevel;
 
-		[SerializeField]
-		private GameObject playerPrefab;
+		[SerializeField] private GameObject playerPrefab;
+		[SerializeField] private GameObject lootPrefab;
 
 		private PlayerState playerState;
 
@@ -32,6 +32,12 @@ namespace com.pedromr.games.shmup
 		// Use this for initialization
 		void Awake()
 		{
+			if (_instance != null)
+			{
+				Destroy(gameObject);
+				return;
+			}
+
 			_instance = this;
 			DontDestroyOnLoad(gameObject);
 			hud = GetComponentInChildren<GameHUD>();
@@ -45,10 +51,9 @@ namespace com.pedromr.games.shmup
 			
 		}
 
-		// Update is called once per frame
-		void Update()
+		public GameObject GetLootPrefab()
 		{
-
+			return lootPrefab;
 		}
 
 		public void OnLevelButtonPressed(int number)
