@@ -42,13 +42,21 @@ namespace com.pedromr.games.shmup
 			DontDestroyOnLoad(gameObject);
 			hud = GetComponentInChildren<GameHUD>();
 			LoadPlayerState();
-			hud.UpdateScrap(playerState.scrap);
+			if (hud != null)
+				hud.UpdateScrap(playerState.scrap);
 		}
 
 		private void LoadPlayerState()
 		{
 			playerState = ScriptableObject.CreateInstance<PlayerState>();
 			
+		}
+
+		public void AddLoot(int amount)
+		{
+			playerState.scrap += amount;
+			if (hud != null)
+				hud.UpdateScrap(playerState.scrap);
 		}
 
 		public GameObject GetLootPrefab()
