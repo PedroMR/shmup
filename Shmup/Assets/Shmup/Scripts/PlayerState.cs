@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 namespace com.pedromr.games.shmup
 {
@@ -7,5 +8,9 @@ namespace com.pedromr.games.shmup
 	{
 		public int scrap;
 
+		internal void addLoot(ILoot loot)
+		{
+			loot.AddToPlayerState(this);
+		}
 	}
 }

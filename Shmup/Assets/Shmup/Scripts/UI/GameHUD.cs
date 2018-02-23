@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 namespace com.pedromr.games.shmup
 {
@@ -19,6 +20,11 @@ namespace com.pedromr.games.shmup
 		{
 			displayedScrap = newValue;
 			scrapAmountLabel.text = newValue.ToString();
+		}
+
+		internal void UpdatePlayerState(PlayerState playerState)
+		{
+			UpdateScrap(playerState.scrap);
 		}
 	}
 }

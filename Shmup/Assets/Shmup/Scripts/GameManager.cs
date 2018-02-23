@@ -15,6 +15,8 @@ namespace com.pedromr.games.shmup
 
 		private PlayerState playerState;
 
+		private GameObject playerGO;
+
 		private GameHUD hud;
 
 		public static GameManager Instance
@@ -26,6 +28,14 @@ namespace com.pedromr.games.shmup
 					_instance = go.AddComponent<GameManager>();
 				}
 				return _instance;
+			}
+		}
+
+		public GameObject PlayerGO
+		{
+			get
+			{
+				return playerGO;
 			}
 		}
 
@@ -52,11 +62,12 @@ namespace com.pedromr.games.shmup
 			
 		}
 
-		public void AddLoot(int amount)
+		public void AddLoot(ILoot loot)
 		{
-			playerState.scrap += amount;
-			if (hud != null)
-				hud.UpdateScrap(playerState.scrap);
+			playerState.addLoot(loot);
+			if (hud != null) {
+				hud.UpdatePlayerState(playerState);
+			}
 		}
 
 		public GameObject GetLootPrefab()
@@ -141,7 +152,7 @@ namespace com.pedromr.games.shmup
 
 		internal GameObject CreatePlayer()
 		{
-			var playerGO = Instantiate(playerPrefab);
+			playerGO = Instantiate(playerPrefab);
 			return playerGO;
 		}
 
