@@ -14,10 +14,9 @@ namespace com.pedromr.games.shmup
 		{
 		}
 
-		void OnTriggerEnter(Collider other)
+		private void OnCollisionEnter(Collision collision)
 		{
-
-			if (other.tag == "PlayerWeapon")
+			if (collision.gameObject.tag == "PlayerWeapon")
 			{
 				// Destroyed!
 				if (explosion != null)
@@ -29,6 +28,10 @@ namespace com.pedromr.games.shmup
 				Destroy(gameObject);
 				//gameController.AddScore(scoreValue);
 			}
+
+		}
+		void OnTriggerEnter(Collider other)
+		{
 
 			if (other.tag == "Player")
 			{

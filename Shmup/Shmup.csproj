@@ -426,6 +426,7 @@
     <Compile Include="Assets\Shmup\Scripts\EnemyBehaviours\LootPickup.cs" />
     <Compile Include="Assets\Shmup\Scripts\Loot\ILoot.cs" />
     <Compile Include="Assets\Shmup\Scripts\Loot\ScrapLoot.cs" />
+    <Compile Include="Assets\Shmup\Scripts\DestroyOnTerrainContact.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />

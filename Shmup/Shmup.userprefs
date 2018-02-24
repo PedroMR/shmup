@@ -1,12 +1,15 @@
 ﻿<Properties StartupConfiguration="{879DB7DC-3B6A-1E0B-518B-D0FD6642957C}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shmup/Scripts/EnemyBehaviours/LootPickup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shmup/Scripts/DestroyByContactWithPlayer.cs">
     <Files>
-      <File FileName="Assets/Shmup/Scripts/GameManager.cs" Line="56" Column="4" />
+      <File FileName="Assets/Shmup/Scripts/GameManager.cs" Line="40" Column="1" />
       <File FileName="Assets/Shmup/Scripts/Loot/ILoot.cs" Line="9" Column="37" />
-      <File FileName="Assets/Shmup/Scripts/Loot/ScrapLoot.cs" Line="27" Column="32" />
+      <File FileName="Assets/Shmup/Scripts/Loot/ScrapLoot.cs" Line="6" Column="31" />
       <File FileName="Assets/Shmup/Scripts/UI/GameHUD.cs" Line="27" Column="4" />
       <File FileName="Assets/Shmup/Scripts/PlayerState.cs" Line="13" Column="15" />
-      <File FileName="Assets/Shmup/Scripts/EnemyBehaviours/LootPickup.cs" Line="8" Column="10" />
+      <File FileName="Assets/Shmup/Scripts/EnemyBehaviours/LootPickup.cs" Line="8" Column="34" />
+      <File FileName="Assets/Shmup/Scripts/EnemyBehaviours/ReleaseLoot.cs" Line="19" Column="28" />
+      <File FileName="Assets/Shmup/Scripts/DestroyOnTerrainContact.cs" Line="13" Column="32" />
+      <File FileName="Assets/Shmup/Scripts/DestroyByContactWithPlayer.cs" Line="19" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
