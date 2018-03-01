@@ -152,6 +152,7 @@ namespace com.pedromr.games.shmup
 
 		internal GameObject CreatePlayer()
 		{
+			Debug.Log("CREATING PLAYER");
 			playerGO = Instantiate(playerPrefab);
 			return playerGO;
 		}

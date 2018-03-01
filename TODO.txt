@@ -1,0 +1,7 @@
+- Turrets
+- Enemies shooting back
+- Persist loot/scrap/etc
+- Upgrades
+- Improve enemy wave system?
+
+
